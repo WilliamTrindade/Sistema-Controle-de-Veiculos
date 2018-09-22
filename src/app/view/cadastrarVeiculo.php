@@ -15,7 +15,7 @@
 
 		<meta charset="UTF-8">
 		<title>Car Control - Login</title>
-		<link rel="stylesheet" href="assets/css/estilo.css">
+		<link rel="stylesheet" href="../../assets/css/estilo.css">
 	</head>
 
 	<body>
@@ -23,7 +23,7 @@
 			<header>
 				<!-- Image and text -->
 				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-				  	<a class="navbar-brand" href="index.php">
+				  	<a class="navbar-brand" href="../../">
 				    	<img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
 				    	Controle Veícular
 				  	</a>
@@ -34,21 +34,20 @@
 				  	<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
 				    	<ul class="navbar-nav">
 				    		<li class="nav-item">
-				        		<a class="nav-link active" href="index.php">Dashboard</a>
+				        		<a class="nav-link" href="../../">Dashboard</a>
 				      		</li>
 				      		<li class="nav-item ">
-				        		<a class="nav-link" href="app/view/cadastrarVeiculo.php">Cadastrar</a>
+				        		<a class="nav-link active" href="cadastrarVeiculo.php">Cadastrar</a>
 				      		</li>
 				      		<li class="nav-item">
-				        		<a class="nav-link" href="app/view/visualizarVeiculo.php">Visualizar</a>
+				        		<a class="nav-link" href="visualizarVeiculo.php">Visualizar</a>
 				      		</li>
 				      		<li class="nav-item dropdown active">
 						        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						        user
 						        </a>
 						        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						          
-						          <a class="dropdown-item" href="app/controller/controleUsuario.php?opcao=Sair">Sair</a>
+						          <a class="dropdown-item" href="../controller/controleUsuario.php?opcao=Sair">Sair</a>
 						        </div>
 						    </li>
 				    	</ul>
