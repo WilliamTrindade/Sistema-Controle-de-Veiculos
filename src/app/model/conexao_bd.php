@@ -2,9 +2,10 @@
 
 	$conexao;
 
-	function conetar(){
+	function conectar(){
 		global $conexao;
-		$conexao = mysqli_connect('localhost', 'root', '','controle_veicular') or die(mysqli_connect_error());
+		$conexao = mysqli_connect('localhost', 'root', '','controle_veiculo') or die(mysqli_connect_error());
+
 	}
 	function fechar(){
 		global $conexao;

@@ -2,11 +2,12 @@
 
 	include 'conexao_bd.php';
 
-	function cadastrar($placa, $marca, $modelo, $ano){
+	function cadastrarVeiculo($placa, $marca, $modelo, $preco){
 		conectar();
-		query("INSERT INTO veiculo(placa, marca, modelo, ano) VALUES ('$placa', '$marca', '$modelo', $ano)");
+		query("INSERT INTO veiculo(placa, marca, modelo, preco) VALUES ('$placa', '$marca', '$modelo', $preco)");
 		fechar();
 	}
+
 	function mostrar(){
 		conectar();
 		$resultado = query("SELECT * FROM veiculo");
