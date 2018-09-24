@@ -53,17 +53,49 @@
 				    <div class="col info">
 				    	<h1>Quantidade de veículos</h1>
 				     	<i class="fas fa-chart-pie"></i>
-				     	<p class="number">10</p>
+				     	<?php 
+
+				     		include 'app/model/crudVeiculo.php';
+
+				     		$resultado = mostrarVeiculo();
+
+				     		$i;
+				     		$total;
+
+				     		if ($resultado) {
+				     			while($linha = mysqli_fetch_assoc($resultado)) {
+			                    	$codigo = $linha['codigo'];
+			                    	$preco = $linha['preco'];
+			                    	global $total;
+			                    	global $i;
+			            			$i++;
+			            			$total = $total + $preco;
+			                    }
+				     		}
+				     		echo "
+								<p class='number'>$i</p>
+				     		";
+
+				     	?>
+				     	
 				    </div>
 				</div>
 				<div class="row">
 					<div class="col info">
 					     <h1>Valor total dos veículos</h1>
 					     <i class="fas fa-dollar-sign"></i>
-					     <p class="number">R$ 12</p>
+					    <?php 
+					     	echo "
+								<p class='number'>
+									<span>R$ $total</span>
+									
+								</p>
+				     		";
+
+					    ?>
 					</div>
 				</div>
-				  <a href="app/view/cadastrarVeiculo.php"><button type="button" class="btn btn-primary btn-sm my-btn">Cadastrar Veúculo</button></a>
+				<a href="app/view/cadastrarVeiculo.php"><button type="button" class="btn btn-primary btn-sm my-btn">Cadastrar Veúculo</button></a>
 			</section>
 		</div>
 	</body>

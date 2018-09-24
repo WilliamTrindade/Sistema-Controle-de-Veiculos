@@ -8,11 +8,13 @@
 		fechar();
 	}
 
-	function mostrar(){
+	function mostrarVeiculo(){
 		conectar();
 		$resultado = query("SELECT * FROM veiculo");
 		fechar();
 		return $resultado;
 	}
+
+
 	
 ?>
