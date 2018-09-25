@@ -1,6 +1,11 @@
 <?php 
 	
-	//verifica se existe uma sesão iniciada
+	session_start();
+	if (isset($_SESSION['nome'])){
+		$nome = $_SESSION['nome'];
+	}else{
+		header("Location: app/view/login.php");
+	}
 
 ?>
 
@@ -16,17 +21,20 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 		<meta charset="UTF-8">
-		<title>Car Control - Login</title>
+		<title>Car Control</title>
 		<link rel="stylesheet" href="assets/css/estilo.css">
 	</head>
 
 	<body>
 		<div class="container" >
 			<header>
+				<div class="user">
+					<p>Logado como <?php echo $nome; ?> <a href="app/controller/controleUsuario.php?opcao=Sair">Sair</a></p>
+				</div>
 				<!-- Image and text -->
 				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 				  	<a class="navbar-brand" href="index.php">
-				    	<i class="fas fa-car"></i>Controle Veícular
+				    	<i class="fas fa-car"></i>Controle Veicular
 				  	</a>
 				  	
 				  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
@@ -43,7 +51,6 @@
 				      		<li class="nav-item">
 				        		<a class="nav-link" href="app/view/visualizarVeiculo.php">Visualizar</a>
 				      		</li>
-				      		
 				    	</ul>
 				  	</div>
 				</nav>
@@ -61,7 +68,10 @@
 
 				     		$i;
 				     		$total;
-
+				     		global $total;
+			                global $i;
+			            	$i = 0;
+			            	$total = 0;
 				     		if ($resultado) {
 				     			while($linha = mysqli_fetch_assoc($resultado)) {
 			                    	$codigo = $linha['codigo'];
@@ -95,7 +105,7 @@
 					    ?>
 					</div>
 				</div>
-				<a href="app/view/cadastrarVeiculo.php"><button type="button" class="btn btn-primary btn-sm my-btn">Cadastrar Veúculo</button></a>
+				<a href="app/view/cadastrarVeiculo.php"><button type="button" class="btn btn-primary btn-sm my-btn">Cadastrar Veículo</button></a>
 			</section>
 		</div>
 	</body>

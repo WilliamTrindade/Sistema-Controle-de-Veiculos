@@ -1,6 +1,11 @@
 <?php 
 	
-	//verifica se existe uma sesão iniciada
+	session_start();
+	if (isset($_SESSION['nome'])){
+		$logado = "sim";
+	}else{
+		header("Location: login.php");
+	}
 
 ?>
 
@@ -16,7 +21,7 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 		<meta charset="UTF-8">
-		<title>Car Control - Login</title>
+		<title>Car Control - Visualizar Veículos</title>
 		<link rel="stylesheet" href="../../assets/css/estilo.css">
 	</head>
 
@@ -26,7 +31,7 @@
 				<!-- Image and text -->
 				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 				  	<a class="navbar-brand" href="../../">
-				    	<i class="fas fa-car"></i>Controle Veícular
+				    	<i class="fas fa-car"></i>Controle Veicular
 				  	</a>
 				  	
 				  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>

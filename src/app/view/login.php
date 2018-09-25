@@ -1,3 +1,13 @@
+<?php 
+	
+	session_start();
+	if (isset($_SESSION['nome'])){
+		header("Location: ../../");
+	}else{
+		$logado = "nao";
+	}
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -21,7 +31,7 @@
 				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
 				  	<a class="navbar-brand" href="login.php">
-				    	<i class="fas fa-car"></i>Controle Veícular
+				    	<i class="fas fa-car"></i>Controle Veicular
 				  	</a>			  	
 				</nav>
 			</header>
@@ -32,14 +42,14 @@
 					
 			  		<div class="form-group">
 					    <label for="nome">Nome</label>
-					    <input type="text" class="form-control" id="nome" placeholder="Entre com o nome">
+					    <input type="text" class="form-control" id="nome" placeholder="Entre com o nome" required="yes" name="nome">
 			  		</div>
 			  		<div class="form-group">
 					    <label for="senha">Senha</label>
-					    <input type="password" class="form-control" id="senha" placeholder="Senha">
+					    <input type="password" class="form-control" id="senha" placeholder="Senha" required="yes" name="senha">
 			  		</div>
 			 		<button type="submit" class="btn btn-primary" name="opcao" value="Entrar">Entrar</button>
-			 		<a class="btn btn-secundary" href="cadastroUsuario.php">Criar Conta</a>
+			 		<a class="btn" href="cadastroUsuario.php">Criar Conta</a>
 				</form>
 			</section>
 		</div>

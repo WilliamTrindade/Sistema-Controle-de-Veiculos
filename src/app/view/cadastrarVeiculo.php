@@ -1,6 +1,11 @@
 <?php 
 	
-	//verifica se existe uma sesão iniciada
+	session_start();
+	if (isset($_SESSION['nome'])){
+		$logado = "sim";
+	}else{
+		header("Location: login.php");
+	}
 
 ?>
 
@@ -19,7 +24,7 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 		<meta charset="UTF-8">
-		<title>Car Control - Login</title>
+		<title>Car Control - Cadastro de Veículos</title>
 		<script type="text/javascript" src="../../assets/js/codigo.js"></script>
 		<link rel="stylesheet" href="../../assets/css/estilo.css">
 	</head>
@@ -30,13 +35,13 @@
 				<!-- Image and text -->
 				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 				  	<a class="navbar-brand" href="../../">
-				    	<i class="fas fa-car"></i>Controle Veícular
+				    	<i class="fas fa-car"></i>Controle Veicular
 				  	</a>
 				  	
 				  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
 				  	</button>
 
-				  	<div class="collapse navbar-collapse justify-content-end">
+				  	<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
 				    	<ul class="navbar-nav">
 				    		<li class="nav-item">
 				        		<a class="nav-link" href="../../">Dashboard</a>
@@ -53,23 +58,23 @@
 				</nav>
 			</header>
 			<section>
-				<h1>Cadastrar Veículos</h1>
+				<h1>Cadastrar Veículo</h1>
 				<form method="POST" action="../controller/controleVeiculo.php" class="form-insert">
 				  	<div class="form-group">
 				    	<label for="placa">Placa</label>
-				    	<input type="text" class="form-control" id="placa" name="placa">
+				    	<input type="text" class="form-control" id="placa" name="placa" required="yes">
 				  	</div>
 				  	<div class="form-group">
 				    	<label for="marca">Marca</label>
-				    	<input type="text" class="form-control" id="marca" placeholder="Digite a Marca" name="marca">
+				    	<input type="text" class="form-control" id="marca" placeholder="Digite a Marca" name="marca" required="yes">
 				  	</div>
 				  	<div class="form-group">
 				    	<label for="modelo">Modelo</label>
-				    	<input type="text" class="form-control" id="modelo" placeholder="Digite o Modelo" name="modelo">
+				    	<input type="text" class="form-control" id="modelo" placeholder="Digite o Modelo" name="modelo" required="yes">
 				  	</div>
 				  	<div class="form-group">
 				    	<label for="preco">Preço</label>
-				    	<input type="text" class="form-control" id="preco" name="preco">
+				    	<input type="text" class="form-control" id="preco" name="preco" required="yes">
 				  	</div>
 				  	
 				  	<button type="submit" class="btn btn-primary" name="opcao" value="Cadastrar Veículo">Cadastrar</button>

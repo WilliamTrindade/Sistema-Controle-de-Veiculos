@@ -1,3 +1,13 @@
+<?php 
+	
+	session_start();
+	if (isset($_SESSION['nome'])){
+		header("Location: ../../");
+	}else{
+		$logado = "nao";
+	}
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -9,7 +19,7 @@
             
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">    
 		<meta charset="UTF-8">
-		<title>Car Control - Cadastro de Veículos</title>
+		<title>Car Control - Cadastro de Usuário</title>
 		<link rel="stylesheet" href="../../assets/css/estilo.css">
 	</head>
 
@@ -20,27 +30,27 @@
 				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
 				  	<a class="navbar-brand" href="cadastroUsuario.php">
-				    	<i class="fas fa-car"></i>Controle Veícular
+				    	<i class="fas fa-car"></i>Controle Veicular
 				  	</a>
 				</nav>
 			</header>
 
 			<section>
-				<h1>Cadastrar Usuário</h1>
+				<h1>Criar Conta</h1>
 				<form class="box-login" method="post" action="../controller/controleUsuario.php" >
 					
 			  		<div class="form-group">
 					    <label for="nome">Nome</label>
-					    <input type="text" class="form-control" id="nome" placeholder="Entre com o nome">
+					    <input type="text" class="form-control" id="nome" name="nome" placeholder="Entre com o nome" required="yes">
 			  		</div>
 			  		<div class="form-group">
 					    <label for="senha">Senha</label>
-					    <input type="password" class="form-control" id="senha" placeholder="Senha">
+					    <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required="yes">
 			  		</div>
-			 		<button type="submit" class="btn btn-primary" name="opcao" value="Cadastrar Usuário">Cadastar</button>
-
-			 		<a class="btn btn-secundary" href="login.php">Já
-			 		 tenho conta</a>
+			 		<button type="submit" class="btn btn-primary" name="opcao" value="Cadastrar Usuário">Cadastrar</button>
+     
+			 		<a class="btn" href="login.php">Já
+			 		tenho conta</a>
 				</form>
 			</section>
 		</div>
