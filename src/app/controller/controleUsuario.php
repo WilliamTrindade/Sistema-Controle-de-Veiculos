@@ -29,22 +29,19 @@
 				$senhaBanco = $linha['senha'];
 			}
 
-				if($nome == $nomeBanco){
-					if ($senha == $senhaBanco) {
-						session_start();
-						$_SESSION['nome'] = $nomeBanco;
-						header("Location: ../../");
-					}else{
-						echo "<script> alert('Senha Incorreta!'); </script>";
-						echo " <script> window.location = '../view/login.php';</script>";
-					}
-				}else{				
-					
-					echo "<script> alert('Nome não existe!'); </script>";
-					
+			if($nome == $nomeBanco){
+				if ($senha == $senhaBanco) {
+					session_start();
+					$_SESSION['nome'] = $nomeBanco;
+					header("Location: ../../");
+				}else{
+					echo "<script> alert('Senha Incorreta!'); </script>";
 					echo " <script> window.location = '../view/login.php';</script>";
-					
 				}
+			}else{
+				echo "<script> alert('Nome não existe!'); </script>";
+				echo " <script> window.location = '../view/login.php';</script>";
+			}			
 		}
 	}elseif (isset($_GET["opcao"])) {
 		$opcao = $_GET["opcao"];
