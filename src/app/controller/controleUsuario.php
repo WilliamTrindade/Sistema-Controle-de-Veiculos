@@ -38,19 +38,13 @@
 						echo "<script> alert('Senha Incorreta!'); </script>";
 						echo " <script> window.location = '../view/login.php';</script>";
 					}
-				}else{
-					//estou com problema 
-					//se coloco numero no nome e esse nome nao existe 
-					//nao exibe o alerta!!!
-					
+				}else{				
 					
 					echo "<script> alert('Nome não existe!'); </script>";
 					
 					echo " <script> window.location = '../view/login.php';</script>";
 					
 				}
-			
-			
 		}
 	}elseif (isset($_GET["opcao"])) {
 		$opcao = $_GET["opcao"];
