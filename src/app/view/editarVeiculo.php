@@ -2,7 +2,7 @@
 	
 	session_start();
 	if (isset($_SESSION['nome'])){
-		$logado = "sim";
+		$nome = $_SESSION['nome'];
 	}else{
 		header("Location: login.php");
 	}
@@ -41,6 +41,9 @@
 				  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
 				  	</button>
 				</nav>
+				<div class="user">
+					<p>Bem Vindo <?php echo $nome; ?> <a href="../controller/controleUsuario.php?opcao=Sair">Sair</a></p>
+				</div>
 			</header>
 			<section>
 				<h1>Editar</h1>

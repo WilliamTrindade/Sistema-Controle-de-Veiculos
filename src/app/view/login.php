@@ -39,7 +39,6 @@
 			<section>
 				<h1>Entrar</h1>
 				<form class="box-login" method="post" action="../controller/controleUsuario.php" >
-					
 			  		<div class="form-group">
 					    <label for="nome">Nome</label>
 					    <input type="text" class="form-control" id="nome" placeholder="Entre com o nome" required="yes" name="nome">

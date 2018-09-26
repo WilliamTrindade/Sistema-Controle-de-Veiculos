@@ -26,88 +26,88 @@
 	</head>
 
 	<body>
-		<div class="container" >
-			<header>
-				<div class="user">
-					<p>Logado como <?php echo $nome; ?> <a href="app/controller/controleUsuario.php?opcao=Sair">Sair</a></p>
-				</div>
-				<!-- Image and text -->
-				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-				  	<a class="navbar-brand" href="index.php">
-				    	<i class="fas fa-car"></i>Controle Veicular
-				  	</a>
+		<div class="container">
+		<header>
+			<!-- Image and text -->
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<a class="navbar-brand" href="index.php">
+				   	<i class="fas fa-car"></i>Controle Veicular
+				</a>
 				  	
-				  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
-				  	</button>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+				</button>
 
-				  	<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-				    	<ul class="navbar-nav">
-				    		<li class="nav-item">
-				        		<a class="nav-link active" href="index.php">Dashboard</a>
-				      		</li>
-				      		<li class="nav-item ">
-				        		<a class="nav-link" href="app/view/cadastrarVeiculo.php">Cadastrar</a>
-				      		</li>
-				      		<li class="nav-item">
-				        		<a class="nav-link" href="app/view/visualizarVeiculo.php">Visualizar</a>
-				      		</li>
-				    	</ul>
-				  	</div>
-				</nav>
-			</header>
-			<section>
-				<div class="row">
-				    <div class="col info">
-				    	<h1>Quantidade de veículos</h1>
-				     	<i class="fas fa-chart-pie"></i>
-				     	<?php 
-
-				     		include 'app/model/crudVeiculo.php';
-
-				     		$resultado = mostrarVeiculo();
-
-				     		$i;
-				     		$total;
-				     		global $total;
-			                global $i;
-			            	$i = 0;
-			            	$total = 0;
-				     		if ($resultado) {
-				     			while($linha = mysqli_fetch_assoc($resultado)) {
-			                    	$codigo = $linha['codigo'];
-			                    	$preco = $linha['preco'];
-			                    	global $total;
-			                    	global $i;
-			            			$i++;
-			            			$total = $total + $preco;
-			                    }
-				     		}
-				     		echo "
-								<p class='number'>$i</p>
-				     		";
-
-				     	?>
-				     	
-				    </div>
+				<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+				   	<ul class="navbar-nav">
+				    	<li class="nav-item">
+				        	<a class="nav-link active" href="index.php">Dashboard</a>
+				      	</li>
+				      	<li class="nav-item ">
+				        	<a class="nav-link" href="app/view/cadastrarVeiculo.php">Cadastrar</a>
+				      	</li>
+				      	<li class="nav-item">
+				        	<a class="nav-link" href="app/view/visualizarVeiculo.php">Visualizar</a>
+				      	</li>
+				    </ul>
 				</div>
-				<div class="row">
-					<div class="col info">
-					     <h1>Valor total dos veículos</h1>
-					     <i class="fas fa-dollar-sign"></i>
-					    <?php 
-					     	echo "
-								<p class='number'>
-									<span>R$ $total</span>
-									
-								</p>
-				     		";
+			</nav>
+			<div class="user">
+				<p>Bem Vindo <?php echo $nome; ?> <a href="app/controller/controleUsuario.php?opcao=Sair">Sair</a></p>
+			</div>
+		</header>
+		<section>
+			<div class="row">
+				<div class="col-md-6 col-sm-12 info">
+				    <h1>Quantidade de veículos</h1>
+				    <i class="fas fa-chart-pie"></i>
 
-					    ?>
-					</div>
+			     	<?php 
+
+			     		include 'app/model/crudVeiculo.php';
+
+			     		$resultado = mostrarVeiculo();
+
+			     		$i;
+			     		$total;
+			     		global $total;
+		                global $i;
+		            	$i = 0;
+		            	$total = 0;
+			     		if($resultado) {
+			     			while($linha = mysqli_fetch_assoc($resultado)) {
+		                    	$codigo = $linha['codigo'];
+		                    	$preco = $linha['preco'];
+		                    	global $total;
+		                    	global $i;
+		            			$i++;
+		            			$total = $total + $preco;
+		                    }
+			     		}
+			     		echo "
+							<p class='number'>$i</p>
+			     		";
+		     		?>
+			     	
 				</div>
-				<a href="app/view/cadastrarVeiculo.php"><button type="button" class="btn btn-primary btn-sm my-btn">Cadastrar Veículo</button></a>
-			</section>
+				<div class="col-md-6 col-sm-12 info">
+					<h1>Valor total dos veículos</h1>
+					<i class="fas fa-dollar-sign"></i>
+					<?php 
+					    echo "
+							<p class='number'>
+								<span>R$ $total</span>			
+							</p>
+				     	";
+					 ?>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<a href="app/view/cadastrarVeiculo.php"><button type="button" class="btn btn-primary btn-sm my-btn">Cadastrar Veículo</button></a>
+				</div>
+			</div>
+			
+		</section>
 		</div>
 	</body>
-
 </html>

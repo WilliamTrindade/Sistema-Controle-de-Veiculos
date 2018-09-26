@@ -60,17 +60,17 @@ h1{
 	margin-right: 5%;	
 }
 .row{
-	margin: 1%;
-	width: 48%;
+	padding: 3%;
+	margin: 0 auto;
+	width: 100%;
 	float: left;
 }
-.col{
-	border-radius: 1%;
-	padding: 2%;
+.info{
+	padding: 4%;
 	text-align: center;
 	transition: 0.3s;
 }
-.col:hover{
+.info:hover{
 	box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .fa-chart-pie {
@@ -81,35 +81,26 @@ h1{
 	font-size: 40px;
 }
 .number{
-	font-size: 600%;
+	font-size: 400%;
 }
 .my-btn{
 	transition: 0.5s;
 	padding: 1%;
-	margin: 1%;
 	font-size: 100%;
-	width: 98%;
-}
-.my-btn:hover{
-	box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	border-left: black 10px solid;
-
-}
-@media only screen and (max-width: 600px) {
-    .row{
-		width: 98%;
-	}
+	width: 100%;
 }
 .navbar-brand{
 	margin-left: 3%;
 }
 .user{
-	background-color: #000000;
+	background-color: #ffffff;
 	float: left;
 	width: 100%;
 	height: 30px;
 }
 .user p{
+	margin-right: 2%;
+	float: right;
 	margin-left: 4%;
-		color: #ffffff;
+	color: #000000;
 }

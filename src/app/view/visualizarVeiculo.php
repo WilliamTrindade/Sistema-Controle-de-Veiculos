@@ -2,7 +2,7 @@
 	
 	session_start();
 	if (isset($_SESSION['nome'])){
-		$logado = "sim";
+		$nome = $_SESSION['nome'];
 	}else{
 		header("Location: login.php");
 	}
@@ -52,6 +52,9 @@
 				    	</ul>
 				  	</div>
 				</nav>
+				<div class="user">
+					<p>Bem Vindo <?php echo $nome; ?> <a href="../controller/controleUsuario.php?opcao=Sair">Sair</a></p>
+				</div>
 			</header>
 			<section>
 				<h1>Visualizar Veículos</h1>
