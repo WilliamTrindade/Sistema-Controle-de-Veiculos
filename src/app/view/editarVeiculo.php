@@ -77,7 +77,7 @@
 				  	</div>
 				  	<div class="form-group">
 				    	<label for="preco">Preço</label>
-				    	<input type="text" class="form-control" id="preco" name="preco" value="<?php echo $preco; ?>" required="yes">
+				    	<input type="number" class="form-control" id="preco" name="preco" value="<?php echo $preco; ?>" required="yes">
 				  	</div>
 
 				  	<!--codigo necessario para usar o código no controle-->
@@ -88,8 +88,6 @@
 				  	<a class="btn btn-secondary" href="visualizarVeiculo.php">Cancelar</a>
 				</form>
 			</section>
-
 		</div>
 	</body>
-
 </html>

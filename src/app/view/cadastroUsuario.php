@@ -55,6 +55,5 @@
 			</section>
 		</div>
 	</body>
-	</body>
 
 </html>
