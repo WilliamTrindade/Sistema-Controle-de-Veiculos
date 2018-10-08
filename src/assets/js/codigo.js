@@ -1,6 +1,6 @@
 //scripts
 //quando o documento estiver pronto
-//executa a funcao e chama a atributo mask 
+//executa a funcao e chama a função mask 
 //do jquery mask
 $(document).ready(
 	function(){
